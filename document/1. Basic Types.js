@@ -192,7 +192,7 @@
 // : object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined.
 // => With object type, APIs like Object.create can be better represented. 
 
-// ◽ Type assertions
+// ◽ Type assertions ( = a type cast in other languages, but performs no special checking or restructuring of data.)
 // : Sometimes you’ll end up in a situation where you’ll know more about a value than TypeScript does. 
 // => Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” 
 // => It has two forms.
