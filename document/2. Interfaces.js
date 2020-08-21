@@ -28,7 +28,7 @@
 
 // ✅ Optional Properties 
 // : Interfaces with optional properties are written similar to other interfaces, with each optional property denoted by a ? at the end of the property name in the declaration.
-// => The advantage of optional properties is that you can describe these possibly available properties while still also preventing use of properties that are not part of the interface. 
+// => The advantage of optional properties is that you can describe these possibly available properties while still also preventing use of properties that are incompatible with determined type.
 /*
     interface SquareConfig {
         color?: string;
@@ -47,6 +47,7 @@
     }
 
     let mySquare = createSquare({color: "black"});
+    // if you use 1 instead of "black", compile error occurs.
 */
 
 
