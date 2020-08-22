@@ -81,8 +81,33 @@ var expert = {
 };
 var people = [person, expert];
 console.log(people);
-// ✅ Hybrid Types
+// ◽ getter and setter
 console.clear();
+var fullNameLength = 10;
+var Employee = /** @class */ (function () {
+    function Employee() {
+        this._name = 'dasol';
+    }
+    Object.defineProperty(Employee.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (newName) {
+            if (newName && newName.length > fullNameLength) {
+                throw new Error("fullName has a max length of " + fullNameLength);
+            }
+            this._name = newName;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ;
+    return Employee;
+}());
+var employee = new Employee();
+if (employee.name) {
+    console.log(employee.name);
+}
 function getCounter() {
     var counter = (function (start) { return "The number is " + start; });
     counter.interval = 2;

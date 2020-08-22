@@ -1,4 +1,5 @@
-// ❗ All fields should be declared outside of a constructor.
+// ✅ Class
+// ◽ All fields should be declared outside of a constructor.
 // 
 interface Shape {
     getArea(): number;
@@ -33,7 +34,7 @@ console.log(circle.getArea()); // 12.56
 console.log(rectangle.getArea()); // 100
 
 
-// ✅ Heritance ( + interface )
+// ◽ Heritance ( + interface )
 // ❗ Note how the child class inherits the fields and methods of the parent class.
 // ❗ Even if a parent class is checked for type, an inherited child class is not checked.
 // ❗ Extending Interfaces is also available.
@@ -94,10 +95,33 @@ const expert: Developer = {
 const people: Person[] = [person, expert];
 console.log(people);
 
-
-// ✅ Hybrid Types
+// ◽ getter and setter
 console.clear();
 
+const fullNameLength = 10;
+
+class Employee {
+    _name : string = 'dasol';
+
+    get name() : string {
+        return this._name;
+    };
+    
+    set name(newName: string) {
+        if (newName && newName.length > fullNameLength) {
+            throw new Error("fullName has a max length of " + fullNameLength);
+        }
+
+        this._name = newName;
+    }
+}
+
+let employee = new Employee();
+if (employee.name) {
+    console.log(employee.name);
+}
+
+// ✅ Hybrid Types
 interface Counter {
     (start: number) : string;
     interval: number;
@@ -116,3 +140,4 @@ const counter = getCounter();
 console.log(counter(2)); 
 console.log(counter.interval);
 console.log(counter.reset());
+
