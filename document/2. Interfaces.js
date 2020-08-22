@@ -157,3 +157,31 @@
 // ✅ Class Types ❓
 // : when we want to specify that certain conditions must be observed in a class, we use interface to set the requirements that the class should have.
 // => you use the 'implements' keyword to specify that the class implements the requirements of a particular interface.
+
+
+// ✅ Extending interfaces
+// : This makes it possible to copy members from one interface to another.
+// => An interface can scale multiple interfaces, creating a combination of all interfaces.
+
+/*
+    interface Shape {
+        color: string;
+    }   
+
+    interface PenStroke {
+        penWidth: number;
+    }
+
+    interface Square extends Shape, PenStroke {
+        sideLength: number;
+    }
+
+    let square = {} as Square;
+    square.color = "blue";
+    square.sideLength = 10;
+    square.penWidth = 5.0;
+*/
+
+// ✅ Hybrid Types
+// : Due to the dynamic and flexible nature of JavaScript, objects operating in several types of combinations can be encountered.
+// => ex. Object that acts as both a function and an object.

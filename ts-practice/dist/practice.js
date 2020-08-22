@@ -80,5 +80,16 @@ var expert = {
     skills: ['javascript', 'react']
 };
 var people = [person, expert];
-console.clear();
 console.log(people);
+// ✅ Hybrid Types
+console.clear();
+function getCounter() {
+    var counter = (function (start) { return "The number is " + start; });
+    counter.interval = 2;
+    counter.reset = function () { console.log('reset() is called.'); };
+    return counter;
+}
+var counter = getCounter();
+console.log(counter(2));
+console.log(counter.interval);
+console.log(counter.reset());

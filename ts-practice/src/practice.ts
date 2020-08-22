@@ -36,7 +36,7 @@ console.log(rectangle.getArea()); // 100
 // ✅ Heritance ( + interface )
 // ❗ Note how the child class inherits the fields and methods of the parent class.
 // ❗ Even if a parent class is checked for type, an inherited child class is not checked.
-// ❗  It can be inherited between interfaces.
+// ❗ Extending Interfaces is also available.
 
 // Example 1
 
@@ -92,5 +92,27 @@ const expert: Developer = {
 };
 
 const people: Person[] = [person, expert];
-console.clear();
 console.log(people);
+
+
+// ✅ Hybrid Types
+console.clear();
+
+interface Counter {
+    (start: number) : string;
+    interval: number;
+    reset(): void;
+}
+
+function getCounter() : Counter {
+    let counter = (function(start: number) { return `The number is ${start}`;}) as Counter;
+    counter.interval = 2;
+    counter.reset = function() { console.log('reset() is called.')};
+    return counter;
+}
+
+
+const counter = getCounter();
+console.log(counter(2)); 
+console.log(counter.interval);
+console.log(counter.reset());
