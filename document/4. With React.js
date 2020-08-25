@@ -19,5 +19,7 @@
 
 
 // ✅ useReducer
-// : When creating a reducer, it is very important to make the same type of parameter as the type of function returns.
+// ✔ When creating a reducer, it is very important to make the same type of parameter as the type of function returns.
 // => Errors can be detected if results have not been returned to a particular case, or if the type of condition has changed.
+// ✔  you must prepare all type script types for the action and combine them using | characters.
+// ✨ If you use the useReducher in a type-script environment, auto-completion is good and type-checking is good.
