@@ -19,4 +19,7 @@
     type Todo = { id: number; text: string; done: boolean };
     const [todos, setTodos] = useState([] as Todo[]);
 */
+// ✅ useReducer
+// : When creating a reducer, it is very important to make the same type of parameter as the type of function returns.
+// => Errors can be detected if results have not been returned to a particular case, or if the type of condition has changed.
 "use strict";
