@@ -37,7 +37,10 @@ let id = 1;
 const todoReducer = (state: TodoState = initialState, action: TodosAction) => {
     switch(action.type) {
         case INSERT:
-            return state.concat({id: id+1, text: action.payload, done: false});
+            {   
+                id++;
+                return state.concat({id, text: action.payload, done: false});
+            }
         case DELETE:
             return state.filter(todo => todo.id !== action.payload);
         case TOGGLE:
