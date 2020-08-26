@@ -1,15 +1,15 @@
-export const increase = () => {
-    type: 'INCREASE';
-}
+export const increase = () => ({
+    type: 'INCREASE'
+});
 
-export const decrease = () => {
-    type: 'DECREASE';
-}
+export const decrease = () => ({
+    type: 'DECREASE'
+})
 
-export const increase_by = (diff : number) => {
-    type: 'INCREASE_BY';
-    payload: diff;
-}
+export const increase_by = (diff : number) => ({
+    type: 'INCREASE_BY',
+    payload: diff
+})
 
 type CounterAction = { type: 'INCREASE' } | { type: 'DECREASE' } | { type: 'INCREASE_BY', payload: number };
 
@@ -23,7 +23,7 @@ const initialState : CounterState = {
 
 const counterReducer = (state: CounterState = initialState, action : CounterAction) : CounterState => {
     switch (action.type) {
-        case 'INCREASE':
+          case 'INCREASE':
             return { count: state.count + 1 };
           case 'DECREASE':
             return { count: state.count - 1 };
