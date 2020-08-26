@@ -22,7 +22,7 @@ type TodosAction =
   | ReturnType<typeof delete_todo>
   | ReturnType<typeof toggle_todo>;
 
-type Todo = {
+export type Todo = {
     id: number,
     text: string,
     done: boolean,
@@ -30,13 +30,7 @@ type Todo = {
 
 type TodoState = Todo[];
 
-const initialState : TodoState = [
-    {
-        id: 1,
-        text: 'text',
-        done: false,
-    }
-];
+const initialState : TodoState = [];
 
 let id = 1;
 
