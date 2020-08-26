@@ -4,6 +4,7 @@ import { useAddTodos } from '../hooks/useAddTodos';
 const TodoInsert = () => {
     const [input, setInput] = useState('');
     const newTodo = useAddTodos();
+
     const onInsertTodos = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         newTodo(input);

@@ -44,7 +44,7 @@ const todoReducer = (state: TodoState = initialState, action: TodosAction) => {
         case DELETE:
             return state.filter(todo => todo.id !== action.payload);
         case TOGGLE:
-            return state.filter(todo => todo.id === action.payload).map(todo => todo.done = !todo.done);
+            return state.map(todo => todo.id === action.payload ? {...todo, done: !todo.done} : todo);
         default:
             return state;
     }
