@@ -40,7 +40,7 @@
 */
 
 /* 
-    import { createAsyncAction, AsyncActionCreator } from 'typesafe-actions';
+    import { createAsyncAction } from 'typesafe-actions';
 
     const fetchUsersAsync = createAsyncAction(
     'FETCH_USERS_REQUEST',

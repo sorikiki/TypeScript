@@ -1,12 +1,12 @@
 const delay = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
 
-export type postProps = {
+export type PostProps = {
     id: number,
     title: string,
     body: string
 };
 
-const posts : postProps[] = [
+const posts : PostProps[] = [
     {
       id: 1,
       title: '리덕스 미들웨어를 배워봅시다',
