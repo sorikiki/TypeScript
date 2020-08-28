@@ -1,13 +1,21 @@
 import { createReducer } from 'typesafe-actions';
-import { PostState, PostActions } from './types';
+import { PostState } from './types';
 import * as actions from './actions';
 
 const initialState : PostState = {
-    posts: null,
-    post: null,
+    posts: {
+        loading: false,
+        data: null,
+        error: false,
+    },
+    post: {
+        loading: false,
+        data: null,
+        error: false,
+    }
 };
 
-const postReducer = createReducer<PostState, PostActions> (initialState, {
+const postReducer = createReducer(initialState, {
     [actions.GET_POSTS_REQUEST] : state => ({
         ...state,
         posts: {

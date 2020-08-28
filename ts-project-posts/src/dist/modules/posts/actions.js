@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getPostAsync = exports.getPostsAsync = exports.GET_POST_ERROR = exports.GET_POST_SUCCESS = exports.GET_POST_REQUEST = exports.GET_POSTS_ERROR = exports.GET_POSTS_SUCCESS = exports.GET_POSTS_REQUEST = void 0;
+var typesafe_actions_1 = require("typesafe-actions");
+exports.GET_POSTS_REQUEST = 'GET_POSTS_REQUEST';
+exports.GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
+exports.GET_POSTS_ERROR = 'GET_POSTS_ERROR';
+exports.GET_POST_REQUEST = 'GET_POST_REQUEST';
+exports.GET_POST_SUCCESS = 'GET_POST_SUCCESS';
+exports.GET_POST_ERROR = 'GET_POST_ERROR';
+exports.getPostsAsync = typesafe_actions_1.createAsyncAction(exports.GET_POSTS_REQUEST, exports.GET_POSTS_SUCCESS, exports.GET_POSTS_ERROR)();
+exports.getPostAsync = typesafe_actions_1.createAsyncAction(exports.GET_POST_REQUEST, exports.GET_POST_SUCCESS, exports.GET_POST_ERROR)();
