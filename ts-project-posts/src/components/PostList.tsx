@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PostProps } from '../api/post';
 
 type PostListProps = {
@@ -10,7 +11,7 @@ const PostList = ({ postList }: PostListProps) => {
         <ul>
             {postList.map((post: PostProps) => 
                 <li key={post.id}>
-                    {post.title}
+                    <Link to={`/${post.id}`}>{post.title}</Link>
                 </li>
             )}
         </ul>
