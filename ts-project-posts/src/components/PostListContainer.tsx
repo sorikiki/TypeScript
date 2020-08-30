@@ -9,12 +9,13 @@ const PostListContainer = () => {
     const dispatch= useDispatch();
 
     useEffect(() => {
+        if(data) return;
         dispatch(getPostsThunk());
     }, [dispatch])
 
     if(loading) return <div>로딩중입니다...</div>
     if(error) return <div>오류발생</div>
-    if(!data) return <div>정보 없음</div>
+    if(!data) return null;
 
     return <PostList postList={data} />
 }
