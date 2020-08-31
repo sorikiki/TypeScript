@@ -1,5 +1,5 @@
 import { createReducer } from 'typesafe-actions';
-import { PostState } from './types';
+import { PostState, PostActions } from './types';
 import * as actions from './actions';
 import reducerUtils from '../../lib/reduerUtils';
 
@@ -8,10 +8,10 @@ const initialState : PostState = {
     post: reducerUtils.initial(),
 };
 
-const postReducer = createReducer(initialState, {
-    [actions.GET_POSTS_REQUEST] : state => ({
+const postReducer = createReducer<PostState, PostActions>(initialState, {
+    [actions.GET_POSTS_REQUEST] : (state, action) => ({
         ...state,
-        posts: reducerUtils.request(),
+        posts: reducerUtils.posts_request(action.payload),
     }),
     [actions.GET_POSTS_SUCCESS] : (state, action) => ({
         ...state,
@@ -23,7 +23,7 @@ const postReducer = createReducer(initialState, {
     }),
     [actions.GET_POST_REQUEST] : (state) => ({
         ...state,
-        post: reducerUtils.request(),
+        post: reducerUtils.post_request(),
     }),
     [actions.GET_POST_SUCCESS]: (state, action) => ({
         ...state,

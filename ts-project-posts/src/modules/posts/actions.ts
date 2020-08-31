@@ -13,10 +13,10 @@ export const getPostsAsync = createAsyncAction(
     GET_POSTS_REQUEST,
     GET_POSTS_SUCCESS,
     GET_POSTS_ERROR,
-)<undefined, PostProps[], Error>();
+)<null | PostProps[], PostProps[], Error>();
 
 export const getPostAsync = createAsyncAction(
     GET_POST_REQUEST,
     GET_POST_SUCCESS,
     GET_POST_ERROR,
-)<undefined, PostProps, Error>();
+)<null, PostProps, Error>();
