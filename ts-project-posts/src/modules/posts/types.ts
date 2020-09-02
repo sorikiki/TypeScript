@@ -1,8 +1,8 @@
 import { ActionType } from 'typesafe-actions';
 import { PostProps } from '../../api/post';
+import * as actions from './actions';
 
-export type PostActions = ActionType<typeof import('./actions')>;
-
+export type PostActions = ActionType<typeof actions>;
 export type PostState = {
     posts: {
         loading: boolean,

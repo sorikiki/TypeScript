@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../modules';
 import Post from './Post';
-import { getPostThunk } from '../modules/posts/thunks';
+import { postCreator } from '../modules/posts/actions';
 
 const PostContainer = ({ match } : RouteComponentProps<{ id: string }> ) => {
     const stringId = match.params.id;
@@ -11,9 +11,9 @@ const PostContainer = ({ match } : RouteComponentProps<{ id: string }> ) => {
 
     const { loading, data, error } = useSelector((state : RootState) => state.postReducer.post);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
-        dispatch(getPostThunk(id));
+        dispatch(postCreator(id));
     }, [dispatch, id])
 
     if(loading) return <div>로딩중입니다...</div>

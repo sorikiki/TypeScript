@@ -3,6 +3,7 @@ import { PostState, PostActions } from './types';
 import * as actions from './actions';
 import reducerUtils from '../../lib/reduerUtils';
 
+
 const initialState : PostState = {
     posts: reducerUtils.initial(),
     post: reducerUtils.initial(),

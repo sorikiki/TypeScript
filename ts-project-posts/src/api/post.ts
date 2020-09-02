@@ -32,7 +32,7 @@ export const getPosts = async () => {
   };
   
 // a function which returns a post list using id.
-  export const getPostById = async (id: number) => {
-    await delay(500); 
+export const getPostById = async (id: number) => {
+    await delay(1500); 
     return posts.find(post => post.id === id); 
   };
