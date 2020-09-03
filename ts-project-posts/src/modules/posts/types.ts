@@ -15,3 +15,10 @@ export type PostState = {
         error: boolean,
     }
 };
+
+declare module 'typesafe-actions' {
+    interface Types {
+        PostState: PostState,
+        PostActions: PostActions;
+      }
+    }

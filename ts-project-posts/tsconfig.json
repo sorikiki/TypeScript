@@ -19,6 +19,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "plugins": [
+      {
+        "transform": "typescript-loadable-components-plugin"
+      }
+    ]
   },
   "exclude": [
     "./node_modules",

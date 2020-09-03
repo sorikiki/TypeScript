@@ -134,7 +134,7 @@
     declare module 'typesafe-actions' {
     interface Types {
         RootAction: RootAction;
-    }
+      }
     }
 
     // now you can use

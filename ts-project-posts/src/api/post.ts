@@ -14,6 +14,6 @@ export const getPosts = async () => {
   
 // a function which returns a post list using id.
 export const getPostById = async (id: number) => {
-  const response  = await axios.get(`http://localhost:4000/posts/${id}`);
+  const response  = await axios.get<PostProps>(`http://localhost:4000/posts/${id}`);
   return response.data;
 };
