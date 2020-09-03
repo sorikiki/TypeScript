@@ -1,7 +1,16 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getPostById } from '../../api/post';
-import { getPostAsync, GET_POST, postCreator} from './actions';
+import { getPostById, getPosts } from '../../api/post';
+import { getPostsAsync, getPostAsync, GET_POSTS, GET_POST, postsCreator, postCreator} from './actions';
 
+export function* getPostsSaga(action: ReturnType<typeof postsCreator>) {
+    yield put(getPostsAsync.request(action.payload));
+    try {
+        const payload = yield call(getPosts);
+        yield put(getPostsAsync.success(payload));
+    } catch(e) {
+        yield put(getPostsAsync.failure(e));
+    }
+}
 export function* getPostSaga(action: ReturnType<typeof postCreator>) {
     yield put(getPostAsync.request(null));
     try {
@@ -13,5 +22,6 @@ export function* getPostSaga(action: ReturnType<typeof postCreator>) {
 }
 
 export function* PostSaga() {
+    yield takeLatest(GET_POSTS, getPostsSaga);
     yield takeLatest(GET_POST, getPostSaga);
 }

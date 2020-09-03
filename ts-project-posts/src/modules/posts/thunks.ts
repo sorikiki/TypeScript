@@ -13,7 +13,7 @@ export const getPostsThunk = (payload: null | PostProps[]): ThunkAction<void, Po
     }
 };
 
-export const getPostThunk = (param: number): ThunkAction<void, PostState, null, PostActions> => async dispatch  => {
+export const getPostThunk = (param: number): ThunkAction<void, PostState, null, PostActions> => async (dispatch)  => {
         dispatch(getPostAsync.request(null));
         try {
             const payload = await getPostById(param);
