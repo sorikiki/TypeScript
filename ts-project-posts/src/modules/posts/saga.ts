@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getPosts, getPostById, PostProps } from '../../api/post';
-import { getPostsAsync, getPostAsync, GET_POST, postCreator} from './actions';
+import { getPostById } from '../../api/post';
+import { getPostAsync, GET_POST, postCreator} from './actions';
 
 export function* getPostSaga(action: ReturnType<typeof postCreator>) {
     yield put(getPostAsync.request(null));

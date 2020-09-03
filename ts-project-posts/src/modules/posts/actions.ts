@@ -1,5 +1,6 @@
 import { createAsyncAction } from 'typesafe-actions';
 import{ PostProps } from '../../api/post';
+import { AxiosError } from 'axios';
 
 export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST';
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
@@ -19,10 +20,10 @@ export const getPostsAsync = createAsyncAction(
     GET_POSTS_REQUEST,
     GET_POSTS_SUCCESS,
     GET_POSTS_ERROR,
-)<null | PostProps[], PostProps[], Error>();
+)<null | PostProps[], PostProps[] , AxiosError>();
 
 export const getPostAsync = createAsyncAction(
     GET_POST_REQUEST,
     GET_POST_SUCCESS,
     GET_POST_ERROR,
-)<null, PostProps, Error>();
+)<null, PostProps , AxiosError>();
